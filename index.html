@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tata Bet - Online Casino & Games</title>
+    <title>Tata Bet - Official Gaming Platform</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -13,6 +13,14 @@
     <header class="header">
         <div class="logo">TATA BET</div>
         <div class="header-right">
+            <!-- Telegram Support Icon -->
+            <a href="https://t.me/Tatabet9719" target="_blank" class="telegram-header-btn" title="Telegram Support">
+                <i class="fa-brands fa-telegram"></i>
+            </a>
+            <!-- WhatsApp Support Icon -->
+            <a href="https://wa.me/917300365084?text=Hello%20Tata%20Bet%20Support,%20I%20need%20help." target="_blank" class="whatsapp-header-btn" title="WhatsApp Support">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
             <div class="balance-box" onclick="location.href='deposit.html'">
                 <i class="fa-solid fa-wallet"></i>
                 <span id="userBalance">₹0.00</span>
@@ -24,7 +32,7 @@
         </div>
     </header>
 
-    <!-- Category Tabs Navigation -->
+    <!-- Category Tabs -->
     <div class="cat-tabs">
         <button class="active" onclick="filterCat('all')">All Games</button>
         <button onclick="filterCat('crash')">Crash</button>
@@ -35,50 +43,75 @@
 
     <!-- Promotional Main Banner -->
     <section class="banner-section" onclick="location.href='deposit.html'">
-        <img src="Screenshot_20260723_101554_Gallery.jpg" alt="Promotion Banner" class="banner-img" onerror="this.src='https://via.placeholder.com/600x250/1a1528/ff2d55?text=Tata+Bet+Special+Offer'">
+        <div class="banner-box-content">
+            <h2>100% WELCOME BONUS</h2>
+            <p>Get up to ₹20,000 on your first deposit!</p>
+            <button class="banner-btn">DEPOSIT NOW</button>
+        </div>
     </section>
 
-    <!-- Games Grid Section (Like india-batery.com style) -->
+    <!-- Games Grid Section -->
     <div class="section-header">
         <span><i class="fa-solid fa-fire" style="color:#ff2d55;"></i> Popular Games</span>
         <span class="view-all" onclick="location.href='deposit.html'">View All</span>
     </div>
 
     <section class="game-grid">
-        
-        <!-- 1. Aviator Game (Opens Playable Game) -->
-        <div class="game-card" onclick="location.href='game.html'">
-            <img src="Screenshot_20260723_105242_Chrome.jpg" alt="Aviator" class="game-banner-img" onerror="this.src='https://via.placeholder.com/300x180/1c152d/ff2d55?text=Aviator'">
+        <div class="game-card" onclick="checkDepositAndPlay('Aviator')">
+            <div class="game-thumb" style="background: linear-gradient(135deg, #2b1055, #7597de);">
+                <i class="fa-solid fa-plane-up"></i>
+                <span>Aviator</span>
+            </div>
             <div class="game-tag">CRASH</div>
         </div>
-
-        <!-- 2. Ice Fishing Game -->
-        <div class="game-card" onclick="location.href='deposit.html'">
-            <img src="Screenshot_20260723_100943_Chrome.jpg" alt="Ice Fishing" class="game-banner-img" onerror="this.src='https://via.placeholder.com/300x180/1c152d/00ffcc?text=Ice+Fishing'">
+        <div class="game-card" onclick="checkDepositAndPlay('Ice Fishing')">
+            <div class="game-thumb" style="background: linear-gradient(135deg, #005c8a, #00ffcc);">
+                <i class="fa-solid fa-fish"></i>
+                <span>Ice Fishing</span>
+            </div>
             <div class="game-tag fishing">TOP</div>
         </div>
-
-        <!-- 3. Neon Cricket -->
-        <div class="game-card" onclick="location.href='deposit.html'">
-            <img src="Screenshot_20260723_105228_Chrome.jpg" alt="Neon Cricket" class="game-banner-img" onerror="this.src='https://via.placeholder.com/300x180/1c152d/ffaa00?text=Neon+Cricket'">
+        <div class="game-card" onclick="checkDepositAndPlay('Neon Cricket')">
+            <div class="game-thumb" style="background: linear-gradient(135deg, #8a5000, #ffaa00);">
+                <i class="fa-solid fa-baseball-bat-ball"></i>
+                <span>Neon Cricket</span>
+            </div>
             <div class="game-tag sport">SPORTS</div>
         </div>
-
-        <!-- 4. Rummy -->
-        <div class="game-card" onclick="location.href='deposit.html'">
-            <img src="Screenshot_20260723_105255_Chrome.jpg" alt="Rummy" class="game-banner-img" onerror="this.src='https://via.placeholder.com/300x180/1c152d/00aaff?text=Rummy'">
+        <div class="game-card" onclick="checkDepositAndPlay('Rummy')">
+            <div class="game-thumb" style="background: linear-gradient(135deg, #003366, #00aaff);">
+                <i class="fa-solid fa-clone"></i>
+                <span>Rummy</span>
+            </div>
             <div class="game-tag card">CARDS</div>
         </div>
-
-        <!-- 5. Slots -->
-        <div class="game-card" onclick="location.href='deposit.html'">
-            <img src="Screenshot_20260723_105307_Code.jpg" alt="Slots" class="game-banner-img" onerror="this.src='https://via.placeholder.com/300x180/1c152d/9900ff?text=Slots'">
+        <div class="game-card" onclick="checkDepositAndPlay('Slots')">
+            <div class="game-thumb" style="background: linear-gradient(135deg, #4b0082, #9900ff);">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Gates of Olympus</span>
+            </div>
             <div class="game-tag slots">SLOTS</div>
         </div>
-
+        <div class="game-card" onclick="checkDepositAndPlay('Mines')">
+            <div class="game-thumb" style="background: linear-gradient(135deg, #330000, #ff3333);">
+                <i class="fa-solid fa-land-mine-on"></i>
+                <span>Mines</span>
+            </div>
+            <div class="game-tag">FAST</div>
+        </div>
     </section>
 
-    <!-- Bottom Navigation Bar (Fixed Footer) -->
+    <!-- Floating Support Buttons -->
+    <div class="floating-support">
+        <a href="https://t.me/Tatabet9719" target="_blank" class="telegram-float" title="Telegram Support">
+            <i class="fa-brands fa-telegram"></i>
+        </a>
+        <a href="https://wa.me/917300365084?text=Hello%20Tata%20Bet%20Support,%20I%20need%20help." target="_blank" class="whatsapp-float" title="WhatsApp Support">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
     <nav class="bottom-nav">
         <a href="index.html" class="active">
             <i class="fa-solid fa-house"></i>
@@ -88,15 +121,24 @@
             <i class="fa-solid fa-wallet"></i>
             <span>Deposit</span>
         </a>
-        <a href="game.html">
-            <i class="fa-solid fa-gamepad"></i>
-            <span>Games</span>
+        <a href="withdrawal.html">
+            <i class="fa-solid fa-money-bill-transfer"></i>
+            <span>Withdraw</span>
         </a>
-        <a href="login.html">
-            <i class="fa-solid fa-user"></i>
-            <span>Account</span>
+        <a href="https://t.me/Tatabet9719" target="_blank">
+            <i class="fa-brands fa-telegram" style="color: #0088cc;"></i>
+            <span>Telegram</span>
         </a>
     </nav>
+
+    <script>
+        function checkDepositAndPlay(gameName) {
+            let confirmDeposit = confirm("Please make a deposit first to play " + gameName + ".");
+            if (confirmDeposit) {
+                window.location.href = "deposit.html";
+            }
+        }
+    </script>
 
 </body>
 </html>
