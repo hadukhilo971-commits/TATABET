@@ -88,35 +88,18 @@ body {
     border-color: #ff2d55;
 }
 
-/* Banner */
+/* Banner Image Styling */
 .banner {
     margin: 15px;
-    background: linear-gradient(135deg, #2b1035, #120e1f);
-    border: 1px solid #ff2d55;
     border-radius: 12px;
-    padding: 20px;
+    overflow: hidden;
     cursor: pointer;
 }
 
-.banner-content h2 {
-    font-size: 22px;
-    margin-bottom: 5px;
-}
-
-.banner-content p {
-    color: #b0b0b0;
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-.bet-btn {
-    background: #ff2d55;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
+.banner-img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
 }
 
 /* Section Title */
@@ -128,7 +111,7 @@ body {
     color: #e0e0e0;
 }
 
-/* Game Grid & Cards with Icons */
+/* Game Grid & Cards */
 .game-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -137,14 +120,11 @@ body {
 }
 
 .game-card {
-    background: #1c152d;
     border-radius: 12px;
-    border: 1px solid #2f2547;
     cursor: pointer;
-    position: relative;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    background: #1c152d;
+    border: 1px solid #2f2547;
     transition: 0.2s;
 }
 
@@ -152,50 +132,11 @@ body {
     border-color: #ff2d55;
 }
 
-.badge {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    background: #00b050;
-    color: white;
-    font-size: 9px;
-    font-weight: bold;
-    padding: 2px 6px;
-    border-radius: 4px;
-    z-index: 2;
-}
-
-.game-thumb {
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    color: white;
-}
-
-.aviator-bg { background: linear-gradient(135deg, #ff2d55, #600020); }
-.ice-bg { background: linear-gradient(135deg, #00d2ff, #005588); }
-.cricket-bg { background: linear-gradient(135deg, #ff9900, #884400); }
-.rummy-bg { background: linear-gradient(135deg, #9900ff, #440088); }
-.jetx-bg { background: linear-gradient(135deg, #e60000, #660000); }
-.slots-bg { background: linear-gradient(135deg, #00cc66, #004422); }
-
-.game-info {
-    padding: 10px;
-    background: #191326;
-}
-
-.game-info h3 {
-    font-size: 13px;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 2px;
-}
-
-.game-info p {
-    font-size: 10px;
-    color: #a09ab0;
+.game-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /* Bottom Navigation */
@@ -228,167 +169,4 @@ body {
 
 .bottom-nav a.active, .bottom-nav a:hover {
     color: #ff2d55;
-}
-
-/* Auth / Login Pages */
-.auth-body {
-    background: #120e1f;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-.auth-container {
-    background: #1a1528;
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid #2f2547;
-    width: 90%;
-    max-width: 380px;
-}
-
-.auth-container h2 {
-    color: white;
-    margin-bottom: 20px;
-    font-size: 20px;
-    text-align: center;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 12px;
-    background: #120e1f;
-    border: 1px solid #3c3158;
-    border-radius: 6px;
-    color: white;
-    font-size: 14px;
-}
-
-.auth-btn {
-    width: 100%;
-    background: #ff2d55;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 15px;
-}
-
-.auth-link {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 13px;
-    color: #aaa;
-}
-
-.auth-link a {
-    color: #ff2d55;
-    text-decoration: none;
-}
-
-/* Deposit Page & Clean QR */
-.deposit-body {
-    background: #120e1f;
-    padding: 15px;
-}
-
-.deposit-container {
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.deposit-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.deposit-header i {
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.deposit-card {
-    background: #1a1528;
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid #2f2547;
-}
-
-.info-badge {
-    background: rgba(255, 45, 85, 0.1);
-    border: 1px solid #ff2d55;
-    padding: 10px;
-    border-radius: 8px;
-    color: #ff2d55;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.instruction {
-    text-align: center;
-    font-size: 14px;
-    margin-bottom: 12px;
-    color: #ccc;
-}
-
-.qr-box-clean {
-    text-align: center;
-    background: #ffffff;
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-.qr-box-clean img {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-}
-
-.amount-options {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    margin-bottom: 15px;
-}
-
-.amount-options button {
-    background: #261f38;
-    border: 1px solid #3c3158;
-    color: white;
-    padding: 8px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 13px;
-}
-
-.amount-options button:hover {
-    border-color: #ff2d55;
-}
-
-.submit-deposit-btn {
-    width: 100%;
-    background: #ff2d55;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 15px;
 }
