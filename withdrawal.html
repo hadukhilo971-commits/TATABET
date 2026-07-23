@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdrawal - Tata Bet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .withdrawal-container {
+            padding: 20px;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        .card-box {
+            background: #171124;
+            border: 1px solid #2a2040;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+        .card-box h3 {
+            font-size: 15px;
+            margin-bottom: 12px;
+            color: #00ffcc;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .form-group {
+            margin-bottom: 14px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            color: #a89bc9;
+            margin-bottom: 6px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            background: #100b1a;
+            border: 1px solid #32254f;
+            border-radius: 8px;
+            color: white;
+            font-size: 14px;
+        }
+        .btn-save, .btn-withdraw {
+            width: 100%;
+            padding: 12px;
+            background: #ff2d55;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .saved-info {
+            background: #100b1a;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #00ffcc;
+            font-size: 13px;
+            color: #00ffcc;
+            display: none;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo" onclick="location.href='index.html'" style="cursor: pointer;"><i class="fa-solid fa-arrow-left"></i> Withdrawal</div>
+        <div class="header-right">
+            <div class="balance-box">
+                <i class="fa-solid fa-wallet"></i>
+                <span>₹0.00</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="withdrawal-container">
+        <!-- Step 1: Add Account -->
+        <div class="card-box" id="accountSection">
+            <h3><i class="fa-solid fa-building-columns"></i> Step 1: Add Bank Account / UPI</h3>
+            <div id="successMsg" class="saved-info">
+                <i class="fa-solid fa-check-circle"></i> Account added successfully! You can now withdraw.
+            </div>
+            <form id="bankForm" onsubmit="saveAccount(event)">
+                <div class="form-group">
+                    <label>Account Holder Name</label>
+                    <input type="text" id="accName" placeholder="Enter full name" required>
+                </div>
+                <div class="form-group">
+                    <label>Bank Account Number</label>
+                    <input type="text" id="accNumber" placeholder="Enter account number" required>
+                </div>
+                <div class="form-group">
+                    <label>IFSC Code</label>
+                    <input type="text" id="ifsc" placeholder="Enter IFSC code" required>
+                </div>
+                <div class="form-group">
+                    <label>UPI ID</label>
+                    <input type="text" id="upiId" placeholder="username@okhdfcbank" required>
+                </div>
+                <button type="submit" class="btn-save">Save Bank Details</button>
+            </form>
+        </div>
+
+        <!-- Step 2: Withdraw Amount -->
+        <div class="card-box" id="withdrawSection" style="opacity: 0.5; pointer-events: none;">
+            <h3><i class="fa-solid fa-money-bill-transfer"></i> Step 2: Withdraw Amount</h3>
+            <div class="form-group">
+                <label>Enter Amount (Min ₹500)</label>
+                <input type="number" id="withdrawAmount" placeholder="Enter amount">
+            </div>
+            <button type="button" class="btn-withdraw" onclick="requestWithdrawal()">Submit Withdrawal</button>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <a href="deposit.html"><i class="fa-solid fa-wallet"></i><span>Deposit</span></a>
+        <a href="withdrawal.html" class="active"><i class="fa-solid fa-money-bill-transfer"></i><span>Withdraw</span></a>
+        <a href="https://t.me/Tatabet9719" target="_blank"><i class="fa-brands fa-telegram" style="color: #0088cc;"></i><span>Support</span></a>
+    </nav>
+
+    <script>
+        function saveAccount(event) {
+            event.preventDefault();
+            let name = document.getElementById('accName').value;
+            let acc = document.getElementById('accNumber').value;
+            if(name && acc) {
+                document.getElementById('bankForm').style.display = 'none';
+                document.getElementById('successMsg').style.display = 'block';
+                let wSection = document.getElementById('withdrawSection');
+                wSection.style.opacity = '1';
+                wSection.style.pointerEvents = 'auto';
+                alert("Bank account details saved successfully!");
+            }
+        }
+        function requestWithdrawal() {
+            let amount = document.getElementById('withdrawAmount').value;
+            if(amount && amount >= 500) {
+                alert("Withdrawal request of ₹" + amount + " submitted successfully!");
+                document.getElementById('withdrawAmount').value = '';
+            } else {
+                alert("Minimum withdrawal amount is ₹500.");
+            }
+        }
+    </script>
+</body>
+</html>
