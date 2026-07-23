@@ -11,7 +11,7 @@ body {
     padding-bottom: 75px;
 }
 
-/* Header Styling */
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -25,7 +25,7 @@ body {
 }
 
 .logo {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 800;
     color: #ff2d55;
     letter-spacing: 1.5px;
@@ -34,17 +34,43 @@ body {
 .header-right {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+}
+
+.telegram-header-btn {
+    background: #0088cc;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.whatsapp-header-btn {
+    background: #25d366;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    text-decoration: none;
 }
 
 .balance-box {
     background: #1f1730;
-    padding: 6px 12px;
+    padding: 5px 10px;
     border-radius: 20px;
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 13px;
+    gap: 5px;
+    font-size: 12px;
     font-weight: 600;
     color: #00ffcc;
     cursor: pointer;
@@ -53,19 +79,20 @@ body {
 
 .balance-box .plus-icon {
     color: #ff2d55;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .profile-icon {
     background: #ff2d55;
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     color: white;
+    font-size: 14px;
 }
 
 /* Category Tabs */
@@ -87,54 +114,70 @@ body {
     background: #1b1428;
     border: 1px solid #2d2245;
     color: #a89bc9;
-    padding: 7px 16px;
+    padding: 6px 14px;
     border-radius: 20px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
     cursor: pointer;
-    transition: 0.2s;
 }
 
-.cat-tabs button.active, .cat-tabs button:hover {
+.cat-tabs button.active {
     background: #ff2d55;
     color: white;
     border-color: #ff2d55;
 }
 
-/* Banner Section */
+/* Banner */
 .banner-section {
     margin: 15px;
+    background: linear-gradient(135deg, #2b1055, #ff2d55);
     border-radius: 12px;
-    overflow: hidden;
+    padding: 20px;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-.banner-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 12px;
+.banner-box-content h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-/* Section Title Header */
+.banner-box-content p {
+    font-size: 12px;
+    color: #ffd1dc;
+    margin-bottom: 12px;
+}
+
+.banner-btn {
+    background: #ffffff;
+    color: #ff2d55;
+    border: none;
+    padding: 6px 14px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Section Header */
 .section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 16px;
     margin-bottom: 12px;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
 }
 
 .view-all {
     color: #8c7fae;
-    font-size: 12px;
+    font-size: 11px;
     cursor: pointer;
 }
 
-/* Game Grid Layout (Strict 2 Columns) */
+/* Game Grid */
 .game-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
@@ -144,37 +187,44 @@ body {
 
 .game-card {
     position: relative;
-    border-radius: 12px;
+    border-radius: 10px;
     cursor: pointer;
     overflow: hidden;
     background: #171124;
     border: 1px solid #2a2040;
     aspect-ratio: 16 / 10;
-    transition: transform 0.2s;
 }
 
-.game-card:active {
-    transform: scale(0.97);
-}
-
-.game-banner-img {
+.game-thumb {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: white;
+}
+
+.game-thumb i {
+    font-size: 26px;
+}
+
+.game-thumb span {
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .game-tag {
     position: absolute;
-    top: 8px;
-    left: 8px;
+    top: 6px;
+    left: 6px;
     background: #ff2d55;
     color: white;
-    font-size: 9px;
+    font-size: 8px;
     font-weight: bold;
-    padding: 2px 6px;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
+    padding: 2px 5px;
+    border-radius: 3px;
 }
 
 .game-tag.fishing { background: #00ffcc; color: #0d0914; }
@@ -182,7 +232,46 @@ body {
 .game-tag.card { background: #00aaff; color: white; }
 .game-tag.slots { background: #9900ff; color: white; }
 
-/* Bottom Navigation Bar */
+/* Floating Support Container */
+.floating-support {
+    position: fixed;
+    bottom: 65px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+}
+
+.telegram-float {
+    background: #0088cc;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    text-decoration: none;
+}
+
+.whatsapp-float {
+    background: #25d366;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    text-decoration: none;
+}
+
+/* Bottom Nav */
 .bottom-nav {
     position: fixed;
     bottom: 0;
@@ -202,15 +291,14 @@ body {
     align-items: center;
     text-decoration: none;
     color: #7d709e;
-    font-size: 11px;
-    gap: 3px;
-    transition: 0.2s;
+    font-size: 10px;
+    gap: 2px;
 }
 
 .bottom-nav a i {
-    font-size: 18px;
+    font-size: 16px;
 }
 
-.bottom-nav a.active, .bottom-nav a:hover {
+.bottom-nav a.active {
     color: #ff2d55;
 }
