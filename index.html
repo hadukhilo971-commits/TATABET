@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tata Bet - Official Website</title>
+    <title>Tata Bet - Online Casino & Games</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
+
+    <!-- Top Header -->
     <header class="header">
         <div class="logo">TATA BET</div>
         <div class="header-right">
             <div class="balance-box" onclick="location.href='deposit.html'">
-                <i class="fa-solid fa-circle-plus"></i>
+                <i class="fa-solid fa-wallet"></i>
                 <span id="userBalance">₹0.00</span>
+                <i class="fa-solid fa-plus-circle plus-icon"></i>
             </div>
             <div class="profile-icon" onclick="location.href='login.html'">
                 <i class="fa-solid fa-user"></i>
@@ -22,58 +24,79 @@
         </div>
     </header>
 
-    <!-- Top Categories Tabs -->
+    <!-- Category Tabs Navigation -->
     <div class="cat-tabs">
-        <button class="active" onclick="filterCategory('all')">All</button>
-        <button onclick="filterCategory('casino')">Casino</button>
-        <button onclick="filterCategory('cricket')">Cricket</button>
-        <button onclick="filterCategory('live')">Live Casino</button>
-        <button onclick="filterCategory('slots')">Slots</button>
+        <button class="active" onclick="filterCat('all')">All Games</button>
+        <button onclick="filterCat('crash')">Crash</button>
+        <button onclick="filterCat('slots')">Slots</button>
+        <button onclick="filterCat('live')">Live Casino</button>
+        <button onclick="filterCat('table')">Table</button>
     </div>
 
-    <!-- Main Banner -->
-    <section class="banner" onclick="location.href='deposit.html'">
-        <img src="Screenshot_20260723_101554_Gallery.jpg" alt="Banner" class="banner-img">
+    <!-- Promotional Main Banner -->
+    <section class="banner-section" onclick="location.href='deposit.html'">
+        <img src="Screenshot_20260723_101554_Gallery.jpg" alt="Promotion Banner" class="banner-img" onerror="this.src='https://via.placeholder.com/600x250/1a1528/ff2d55?text=Tata+Bet+Special+Offer'">
     </section>
 
-    <!-- Games Grid (All Games Added Properly) -->
-    <div class="section-title">Popular Games</div>
+    <!-- Games Grid Section (Like india-batery.com style) -->
+    <div class="section-header">
+        <span><i class="fa-solid fa-fire" style="color:#ff2d55;"></i> Popular Games</span>
+        <span class="view-all" onclick="location.href='deposit.html'">View All</span>
+    </div>
+
     <section class="game-grid">
         
-        <!-- 1. Aviator (Clicking this opens the Playable Game) -->
+        <!-- 1. Aviator Game (Opens Playable Game) -->
         <div class="game-card" onclick="location.href='game.html'">
-            <img src="Screenshot_20260723_105242_Chrome.jpg" alt="Aviator" class="game-banner-img" onerror="this.src='https://via.placeholder.com/300x150/1c152d/ff2d55?text=Aviator'">
+            <img src="Screenshot_20260723_105242_Chrome.jpg" alt="Aviator" class="game-banner-img" onerror="this.src='https://via.placeholder.com/300x180/1c152d/ff2d55?text=Aviator'">
+            <div class="game-tag">CRASH</div>
         </div>
 
-        <!-- 2. Ice Fishing (Added with Fallback) -->
+        <!-- 2. Ice Fishing Game -->
         <div class="game-card" onclick="location.href='deposit.html'">
-            <img src="Screenshot_20260723_100943_Chrome.jpg" alt="Ice Fishing" class="game-banner-img" onerror="this.src='https://via.placeholder.com/300x150/1c152d/00ffcc?text=Ice+Fishing'">
+            <img src="Screenshot_20260723_100943_Chrome.jpg" alt="Ice Fishing" class="game-banner-img" onerror="this.src='https://via.placeholder.com/300x180/1c152d/00ffcc?text=Ice+Fishing'">
+            <div class="game-tag fishing">TOP</div>
         </div>
 
         <!-- 3. Neon Cricket -->
         <div class="game-card" onclick="location.href='deposit.html'">
-            <img src="Screenshot_20260723_105228_Chrome.jpg" alt="Neon Cricket" class="game-banner-img">
+            <img src="Screenshot_20260723_105228_Chrome.jpg" alt="Neon Cricket" class="game-banner-img" onerror="this.src='https://via.placeholder.com/300x180/1c152d/ffaa00?text=Neon+Cricket'">
+            <div class="game-tag sport">SPORTS</div>
         </div>
 
         <!-- 4. Rummy -->
         <div class="game-card" onclick="location.href='deposit.html'">
-            <img src="Screenshot_20260723_105255_Chrome.jpg" alt="Rummy" class="game-banner-img">
+            <img src="Screenshot_20260723_105255_Chrome.jpg" alt="Rummy" class="game-banner-img" onerror="this.src='https://via.placeholder.com/300x180/1c152d/00aaff?text=Rummy'">
+            <div class="game-tag card">CARDS</div>
         </div>
 
         <!-- 5. Slots -->
         <div class="game-card" onclick="location.href='deposit.html'">
-            <img src="Screenshot_20260723_105307_Code.jpg" alt="Slots" class="game-banner-img">
+            <img src="Screenshot_20260723_105307_Code.jpg" alt="Slots" class="game-banner-img" onerror="this.src='https://via.placeholder.com/300x180/1c152d/9900ff?text=Slots'">
+            <div class="game-tag slots">SLOTS</div>
         </div>
 
     </section>
 
-    <!-- Bottom Navigation Bar -->
+    <!-- Bottom Navigation Bar (Fixed Footer) -->
     <nav class="bottom-nav">
-        <a href="index.html" class="active"><i class="fa-solid fa-house"></i><span>Home</span></a>
-        <a href="index.html"><i class="fa-solid fa-coins"></i><span>Casino</span></a>
-        <a href="index.html"><i class="fa-solid fa-futbol"></i><span>Sport</span></a>
-        <a href="deposit.html"><i class="fa-solid fa-ticket"></i><span>Bet slip</span></a>
-        <a href="login.html"><i class="fa-solid fa-bars"></i><span>Menu</span></a>
+        <a href="index.html" class="active">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="deposit.html">
+            <i class="fa-solid fa-wallet"></i>
+            <span>Deposit</span>
+        </a>
+        <a href="game.html">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>Games</span>
+        </a>
+        <a href="login.html">
+            <i class="fa-solid fa-user"></i>
+            <span>Account</span>
+        </a>
     </nav>
+
 </body>
 </html>
