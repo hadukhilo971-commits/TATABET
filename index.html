@@ -1,61 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TATA BET</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata Bet - Official Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">TATA BET</div>
+        <div class="header-right">
+            <div class="balance-box">
+                <i class="fa-solid fa-circle-plus" onclick="location.href='deposit.html'"></i>
+                <span>₹3,76,339.66</span>
+            </div>
+            <div class="profile-icon" onclick="location.href='login.html'">
+                <i class="fa-solid fa-user"></i>
+            </div>
+        </div>
+    </header>
 
-<header class="topbar">
-    <div class="logo">
-        <span>TATA</span><b>BET</b>
-    </div>
+    <!-- Main Banner -->
+    <section class="banner" onclick="location.href='deposit.html'">
+        <div class="banner-content">
+            <h2>Zimbabwe – India</h2>
+            <p>Cricket. T20</p>
+            <button class="bet-btn">Place a bet &rarr;</button>
+        </div>
+    </section>
 
-    <div class="menu">
-        <a href="login.html">Login</a>
-        <a href="register.html">Register</a>
-    </div>
-</header>
+    <!-- Categories Grid -->
+    <section class="categories">
+        <div class="card casino-card" onclick="location.href='deposit.html'">
+            <h3>Casino</h3>
+            <p>17601 games</p>
+        </div>
+        <div class="card cricket-card" onclick="location.href='deposit.html'">
+            <h3>Cricket</h3>
+            <p>58 events</p>
+        </div>
+        <div class="card live-card" onclick="location.href='deposit.html'">
+            <h3>Live casino</h3>
+            <p>566 games</p>
+        </div>
+        <div class="card sport-card" onclick="location.href='deposit.html'">
+            <h3>Sport</h3>
+            <p>Top events</p>
+        </div>
+        <div class="card aviator-card" onclick="location.href='deposit.html'">
+            <h3>Aviator</h3>
+            <p>Instant game</p>
+        </div>
+    </section>
 
-<section class="banner">
-    <h2>Welcome to TATA BET</h2>
-    <p>Enjoy exciting games.</p>
-</section>
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="active"><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <a href="index.html"><i class="fa-solid fa-coins"></i><span>Casino</span></a>
+        <a href="index.html"><i class="fa-solid fa-futbol"></i><span>Sport</span></a>
+        <a href="deposit.html"><i class="fa-solid fa-ticket"></i><span>Deposit</span></a>
+        <a href="login.html"><i class="fa-solid fa-bars"></i><span>Menu</span></a>
+    </nav>
 
-<section class="games">
-
-<div class="card">
-<h3>Aviator</h3>
-<button>Play</button>
-</div>
-
-<div class="card">
-<h3>Rummy</h3>
-<button>Play</button>
-</div>
-
-<div class="card">
-<h3>Cricket</h3>
-<button>Play</button>
-</div>
-
-<div class="card">
-<h3>Sports</h3>
-<button>Play</button>
-</div>
-
-</section>
-
-<nav class="bottom">
-<a href="index.html">Home</a>
-<a href="#">Games</a>
-<a href="login.html">Profile</a>
-</nav>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
