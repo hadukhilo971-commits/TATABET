@@ -33,36 +33,38 @@
 
     <!-- Main Banner -->
     <section class="banner" onclick="location.href='deposit.html'">
-        <img src="Screenshot_20260723_101554_Gallery.jpg" alt="Zimbabwe vs India" class="banner-img">
+        <img src="Screenshot_20260723_101554_Gallery.jpg" alt="Banner" class="banner-img">
     </section>
 
-    <!-- Games Grid -->
+    <!-- Games Grid (All Games Added Properly) -->
     <div class="section-title">Popular Games</div>
     <section class="game-grid">
-        <!-- Aviator -->
-        <div class="game-card" onclick="location.href='deposit.html'">
-            <img src="Screenshot_20260723_105242_Chrome.jpg" alt="Aviator" class="game-banner-img">
+        
+        <!-- 1. Aviator (Clicking this opens the Playable Game) -->
+        <div class="game-card" onclick="location.href='game.html'">
+            <img src="Screenshot_20260723_105242_Chrome.jpg" alt="Aviator" class="game-banner-img" onerror="this.src='https://via.placeholder.com/300x150/1c152d/ff2d55?text=Aviator'">
         </div>
 
-        <!-- Ice Fishing -->
+        <!-- 2. Ice Fishing (Added with Fallback) -->
         <div class="game-card" onclick="location.href='deposit.html'">
-            <img src="Screenshot_20260723_100943_Chrome.jpg" alt="Ice Fishing" class="game-banner-img">
+            <img src="Screenshot_20260723_100943_Chrome.jpg" alt="Ice Fishing" class="game-banner-img" onerror="this.src='https://via.placeholder.com/300x150/1c152d/00ffcc?text=Ice+Fishing'">
         </div>
 
-        <!-- Neon Cricket -->
+        <!-- 3. Neon Cricket -->
         <div class="game-card" onclick="location.href='deposit.html'">
             <img src="Screenshot_20260723_105228_Chrome.jpg" alt="Neon Cricket" class="game-banner-img">
         </div>
 
-        <!-- Rummy -->
+        <!-- 4. Rummy -->
         <div class="game-card" onclick="location.href='deposit.html'">
             <img src="Screenshot_20260723_105255_Chrome.jpg" alt="Rummy" class="game-banner-img">
         </div>
 
-        <!-- Slots -->
+        <!-- 5. Slots -->
         <div class="game-card" onclick="location.href='deposit.html'">
-            <img src="Screenshot_20260723_105307_Chrome.jpg" alt="Slots" class="game-banner-img">
+            <img src="Screenshot_20260723_105307_Code.jpg" alt="Slots" class="game-banner-img">
         </div>
+
     </section>
 
     <!-- Bottom Navigation Bar -->
@@ -73,7 +75,5 @@
         <a href="deposit.html"><i class="fa-solid fa-ticket"></i><span>Bet slip</span></a>
         <a href="login.html"><i class="fa-solid fa-bars"></i><span>Menu</span></a>
     </nav>
-
-    <script src="script.js"></script>
 </body>
 </html>
