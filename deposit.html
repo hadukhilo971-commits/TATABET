@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata Bet - Deposit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="deposit-body">
+    <div class="deposit-container">
+        <div class="deposit-header">
+            <i class="fa-solid fa-arrow-left" onclick="history.back()"></i>
+            <h2>Deposit Funds</h2>
+        </div>
 
+        <div class="deposit-card">
+            <div class="info-badge">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span>Minimum Deposit Amount: <b>₹300</b></span>
+            </div>
+
+            <p class="instruction">Scan the MobiKwik QR Code below to pay:</p>
+            
+            <!-- MobiKwik QR Code Image -->
+            <div class="qr-box">
+                <img src="qr.png" alt="MobiKwik QR Code" id="qrImage">
+            </div>
+
+            <div class="amount-options">
+                <button type="button" onclick="setAmount(300)">₹300</button>
+                <button type="button" onclick="setAmount(500)">₹500</button>
+                <button type="button" onclick="setAmount(1000)">₹1000</button>
+                <button type="button" onclick="setAmount(5000)">₹5000</button>
+            </div>
+
+            <div class="form-group">
+                <label>Enter Amount (Min ₹300):</label>
+                <input type="number" id="customAmount" placeholder="Enter amount e.g. 300" min="300" value="300">
+            </div>
+
+            <div class="form-group">
+                <label>Enter UTR / Transaction ID:</label>
+                <input type="text" id="utrInput" placeholder="Enter 12-digit UTR number">
+            </div>
+
+            <button class="submit-deposit-btn" onclick="submitDeposit()">Confirm & Submit Deposit</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
