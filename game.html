@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviator - Tata Bet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .game-container {
+            padding: 20px;
+            text-align: center;
+        }
+        .flight-screen {
+            background: linear-gradient(135deg, #1a1528, #0b0714);
+            border: 2px solid #2f2547;
+            border-radius: 12px;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .multiplier {
+            font-size: 40px;
+            font-weight: bold;
+            color: #00ffcc;
+            z-index: 2;
+        }
+        .plane-icon {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            font-size: 30px;
+            color: #ff2d55;
+            transition: 0.1s linear;
+        }
+        .bet-controls {
+            background: #1a1528;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #2f2547;
+        }
+        .bet-controls input {
+            width: 100%;
+            padding: 10px;
+            background: #120e1f;
+            border: 1px solid #3c3158;
+            color: white;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .fly-btn {
+            width: 100%;
+            background: #ff2d55;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .fly-btn.cashout {
+            background: #00ffcc;
+            color: #120e1f;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo"><i class="fa-solid fa-arrow-left" onclick="location.href='index.html'" style="cursor:pointer; margin-right:10px;"></i> Aviator Game</div>
+    </header>
+
+    <div class="game-container">
+        <div class="flight-screen">
+            <div class="multiplier" id="multiplierText">1.00x</div>
+            <i class="fa-solid fa-plane plane-icon" id="plane"></i>
+        </div>
+
+        <div class="bet-controls">
+            <input type="number" id="betAmount" placeholder="Enter Bet Amount (₹)" value="100">
+            <button class="fly-btn" id="actionBtn" onclick="toggleGame()">Place Bet</button>
+        </div>
+    </div>
+
+    <script>
+        let isPlaying = false;
+        let multiplier = 1.00;
+        let timer;
+        let crashAt = 1.00;
+
+        function toggleGame() {
+            let btn = document.getElementById("actionBtn");
+            let mText = document.getElementById("multiplierText");
+            let plane = document.getElementById("plane");
+
+            if (!isPlaying) {
+                // Start Game
+                isPlaying = true;
+                multiplier = 1.00;
+                crashAt = (Math.random() * 3 + 1.5).toFixed(2); // Random crash between 1.5x and 4.5x
+                btn.innerText = "CASHOUT";
+                btn.classList.add("cashout");
+
+                let xPos = 20;
+                let yPos = 20;
+
+                timer = setInterval(() => {
+                    multiplier += 0.04;
+                    mText.innerText = multiplier.toFixed(2) + "x";
+
+                    // Move plane animation
+                    if (xPos < 200) xPos += 2;
+                    if (yPos < 150) yPos += 1.5;
+                    plane.style.left = xPos + "px";
+                    plane.style.bottom = yPos + "px";
+
+                    if (multiplier >= crashAt) {
+                        clearInterval(timer);
+                        mText.innerText = "FALED (CRASHED " + crashAt + "x)";
+                        mText.style.color = "#ff2d55";
+                        btn.innerText = "Place Bet";
+                        btn.classList.remove("cashout");
+                        isPlaying = false;
+                    }
+                }, 100);
+
+            } else {
+                // Cashout
+                clearInterval(timer);
+                alert("Successfully Cashed out at " + multiplier.toFixed(2) + "x!");
+                btn.innerText = "Place Bet";
+                btn.classList.remove("cashout");
+                mText.style.color = "#00ffcc";
+                isPlaying = false;
+                plane.style.left = "20px";
+                plane.style.bottom = "20px";
+            }
+        }
+    </script>
+</body>
+</html>
