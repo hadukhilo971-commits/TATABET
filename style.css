@@ -6,9 +6,9 @@
 }
 
 body {
-    background-color: #120e1f;
+    background-color: #0d0914;
     color: #ffffff;
-    padding-bottom: 80px;
+    padding-bottom: 75px;
 }
 
 /* Header Styling */
@@ -16,9 +16,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1a1528;
+    background-color: #151021;
     padding: 12px 16px;
-    border-bottom: 1px solid #2a223f;
+    border-bottom: 1px solid #251d38;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -26,9 +26,9 @@ body {
 
 .logo {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 800;
     color: #ff2d55;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
 
 .header-right {
@@ -38,21 +38,22 @@ body {
 }
 
 .balance-box {
-    background: #261f38;
+    background: #1f1730;
     padding: 6px 12px;
     border-radius: 20px;
     display: flex;
     align-items: center;
     gap: 6px;
     font-size: 13px;
+    font-weight: 600;
     color: #00ffcc;
     cursor: pointer;
-    border: 1px solid #3c3158;
+    border: 1px solid #32254f;
 }
 
-.balance-box i {
+.balance-box .plus-icon {
     color: #ff2d55;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .profile-icon {
@@ -72,9 +73,10 @@ body {
     display: flex;
     gap: 8px;
     overflow-x: auto;
-    padding: 10px 15px;
-    background: #171225;
+    padding: 12px 15px;
+    background: #110c1c;
     white-space: nowrap;
+    border-bottom: 1px solid #1f1730;
 }
 
 .cat-tabs::-webkit-scrollbar {
@@ -82,13 +84,15 @@ body {
 }
 
 .cat-tabs button {
-    background: #221c33;
-    border: 1px solid #32284c;
-    color: #b0a8c0;
-    padding: 6px 14px;
+    background: #1b1428;
+    border: 1px solid #2d2245;
+    color: #a89bc9;
+    padding: 7px 16px;
     border-radius: 20px;
     font-size: 13px;
+    font-weight: 500;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .cat-tabs button.active, .cat-tabs button:hover {
@@ -97,12 +101,13 @@ body {
     border-color: #ff2d55;
 }
 
-/* Banner */
-.banner {
+/* Banner Section */
+.banner-section {
     margin: 15px;
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .banner-img {
@@ -112,16 +117,24 @@ body {
     border-radius: 12px;
 }
 
-/* Section Title */
-.section-title {
-    padding: 0 15px;
-    font-size: 16px;
+/* Section Title Header */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    margin-bottom: 12px;
+    font-size: 15px;
     font-weight: bold;
-    margin-bottom: 10px;
-    color: #e0e0e0;
 }
 
-/* Game Grid - Strict 2 Columns */
+.view-all {
+    color: #8c7fae;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* Game Grid Layout (Strict 2 Columns) */
 .game-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
@@ -130,12 +143,18 @@ body {
 }
 
 .game-card {
+    position: relative;
     border-radius: 12px;
     cursor: pointer;
     overflow: hidden;
-    background: #1c152d;
-    border: 1px solid #2f2547;
+    background: #171124;
+    border: 1px solid #2a2040;
     aspect-ratio: 16 / 10;
+    transition: transform 0.2s;
+}
+
+.game-card:active {
+    transform: scale(0.97);
 }
 
 .game-banner-img {
@@ -145,17 +164,35 @@ body {
     display: block;
 }
 
+.game-tag {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #ff2d55;
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.game-tag.fishing { background: #00ffcc; color: #0d0914; }
+.game-tag.sport { background: #ffaa00; color: #0d0914; }
+.game-tag.card { background: #00aaff; color: white; }
+.game-tag.slots { background: #9900ff; color: white; }
+
 /* Bottom Navigation Bar */
 .bottom-nav {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #161122;
+    background: #120d1c;
     display: flex;
     justify-content: space-around;
-    padding: 10px 0;
-    border-top: 1px solid #28203d;
+    padding: 8px 0;
+    border-top: 1px solid #231a38;
     z-index: 1000;
 }
 
@@ -164,9 +201,10 @@ body {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: #8c85a0;
+    color: #7d709e;
     font-size: 11px;
     gap: 3px;
+    transition: 0.2s;
 }
 
 .bottom-nav a i {
